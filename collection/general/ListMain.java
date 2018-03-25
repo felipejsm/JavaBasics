@@ -10,20 +10,26 @@ public class ListMain {
         minhaListaString.addAll(new ListMain().leArquivoDeBandas());
         System.out.println(minhaListaString.size());
         System.out.println("******Original******");
-        for(int index = 0, len = 10;index < len;index++) {
-            System.out.println(minhaListaString.get(index));
-        }
+        new ListMain().mostra(minhaListaString);
         System.out.println("******Sorting******");
         Collections.sort(minhaListaString);
-        for(int index = 0, len = 10;index < len;index++) {
-            System.out.println(minhaListaString.get(index));
-        }
-        System.out.println("******Sorting******");
-        Collections.sort(minhaListaString);
-        for(int index = 0, len = 10;index < len;index++) {
-            System.out.println(minhaListaString.get(index));
-        }
+        new ListMain().mostra(minhaListaString);
+
+        System.out.println("******CompareTo prior java 8******");
         
+        Collections.sort(minhaListaString, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                return b.compareTo(a);
+            } 
+        });
+        
+        new ListMain().mostra(minhaListaString);
+    }
+    private void mostra(List<String> lista ) {
+        for(int index = 0, len = 10;index < len;index++) {
+            System.out.println(lista.get(index));
+        }
     }
     private List<String> leArquivoDeBandas() throws Exception{
         List<String> minhaListaString = new ArrayList<>();
