@@ -23,7 +23,9 @@ public class ListMain {
                 return b.compareTo(a);
             } 
         });
-        
+        new ListMain().mostra(minhaListaString);
+        System.out.println("******CompareTo java 8******");
+        minhaListaString.sort(( a,  b) -> a.compareTo(b));
         new ListMain().mostra(minhaListaString);
     }
     private void mostra(List<String> lista ) {
