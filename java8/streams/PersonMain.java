@@ -1,4 +1,6 @@
-import java.util.*;
+
+import java.util.stream;
+import java.util.stream.Stream;
 /**
  * PersonMain
  */
@@ -9,8 +11,12 @@ public class PersonMain {
             new Person("Renan da Van", 30),
             new Person("Pedro", 40)
         );
-        Person result = getStudentByName(persons, "Pedro");
-        System.out.println(result.toString());
+        if(false) {
+            Person result = getStudentByName(persons, "Pedro");
+            System.out.println(result.toString());
+        } else {
+            java8Way(persons);
+        }
     }
     private static Person getStudentByName(List<Person> persons, String name) {
         Person result = null;
