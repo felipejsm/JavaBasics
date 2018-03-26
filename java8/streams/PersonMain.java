@@ -21,4 +21,17 @@ public class PersonMain {
         }
         return result;
     }
+    private static void java8Way(List<Person> persons) {
+        Person result1 = persons.stream()
+                        .filter(p -> "Pedro".equals(p.getName()))
+                        .findAny()
+                        .orElse(null);
+        System.out.println(result1.toString());
+
+        Person result2 = persons.stream()
+                         .filter(p -> "xuxa".equals(p.getName()))
+                         .findAny()
+                         .orElse(null);
+        System.out.println(result2);
+    }
 }
